@@ -4,7 +4,7 @@
 
 int getliney(char line[], int maxline);
 
-/* print longest input line
+/* print input lines > 80 && < 1000 chars
         getline renamed to getliney as getline
         already exists in stdio.h */
 main()

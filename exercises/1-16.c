@@ -6,7 +6,7 @@ void copy(char to[], char from[]);
 
 /* print longest input line
         getline renamed to getliney as getline
-        already exists in stdio.h */
+        already exists in stdio.h, compile fails */
 main()
 {
         int len;                /* current line length */

@@ -14,10 +14,10 @@ main()
         char line[MAXLINE];     /* current input line */
         char nline[MAXLINE];    /* modified line without blanks */
 
-        while ((len = getliney(line, MAXLINE)) > 0)
+        while ((len = getliney(line, MAXLINE)) > 0) {
                 removeB(nline, line);
-                if (len > 0)            /* there was a line with more than just '\n' */
-                        printf("%s", nline);
+                printf("%s", nline);
+        }
         return 0;
 }
 
@@ -44,6 +44,13 @@ void removeB(char to[], char from[])
         i = 0;
         while ((to[i] = from[i]) != '\0')
                 ++i;
-        for (; to[i] == ' ' || to[i] == '\t'; --i)
-                to[i] = '\0';
+        while (i >= 0) {
+                if (to[i -2 ] == ' ' || to[i] == '\t') {
+                        to[i - 2] = '\n';
+                        to[i - 1] = '\0';
+                        --i;
+                }
+                else
+                        i = -1;
+        }
 }

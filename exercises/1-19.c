@@ -5,8 +5,7 @@ int getliney(char line[], int maxline);
 void reverse(char s[]);
 
 /* program to reverse the character string a line at a time
-        getline renamed to getliney as getline
-        already exists in stdio.h */
+        getline renamed to getliney as getline already exists in stdio.h */
 main()
 {
         int len;                /* current line length */
@@ -38,13 +37,13 @@ int getliney(char s[], int lim)
 void reverse(char s[])
 {
         int i, j, len;
-        char tempS[MAXLINE];
+        char ch[1], tempS[MAXLINE];
 
         i = 0;
         while ((tempS[i] = s[i]) != '\0')
                 ++i;
-
-        len = i - 1;
+        len = i - 1;    /* no need to reverse '\n' */
+        i = i - 2;
         for (j = 0; j < len; ++j) {
                 s[j] = tempS[i];
                 --i;

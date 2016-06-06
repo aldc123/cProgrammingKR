@@ -37,7 +37,7 @@ int getliney(char s[], int lim)
 void reverse(char s[])
 {
         int i, j, len;
-        char ch[1], tempS[MAXLINE];
+        char tempS[MAXLINE];
 
         i = 0;
         while ((tempS[i] = s[i]) != '\0')

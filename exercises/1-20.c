@@ -3,7 +3,7 @@
 
 int calcBlnks(int charCnt);
 
-/* replace tabs from input with blanks, maintaining tab stops */
+/* detab; replace tabs from input with blanks, maintaining tab stops */
 void main(void)
 {
         int c, x, blnksReq, charCnt;
